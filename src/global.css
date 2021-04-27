@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --white: #d5dfe5ff;
+    --light-accent: #c9b1bdff;
+    --dark-accent: #493b2aff;
+    --main: #7f9172ff;
+    --black: #0f0f0fff;
+}
+
+* {
+    margin:0;
+    padding:0;
+    
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--dark-accent) var(--main);
+}
+
+body {
+    background: var(--main);
+}

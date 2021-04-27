@@ -1,0 +1,5 @@
+@import "../global.css";
+
+.sage-app > div {
+    padding: 0 10%;
+}

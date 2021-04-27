@@ -1,0 +1,6 @@
+@import "../global.css";
+
+.sage-walk-route {
+    display: flex;
+    flex-direction: row;
+}

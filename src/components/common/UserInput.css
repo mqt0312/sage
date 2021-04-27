@@ -1,0 +1,12 @@
+@import "../../global.css";
+
+.sage-user-input-container > textarea {
+    background-color: var(--main);
+    width: 100%;
+    border: none;
+    font-size: 35px;
+    outline: none;
+    margin: 20px 0 10px 0;
+    resize: none;
+    /* padding: 20px 0 100px 0; */
+  }
