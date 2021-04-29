@@ -1,0 +1,7 @@
+@import '../../global.css';
+
+.sage-btn-right, .sage-btn-left {
+    width: 20px;
+    background-color: var(--white);
+    opacity: 0.5;
+}
