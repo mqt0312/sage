@@ -9,15 +9,15 @@
 .sage-btn-container {
     display: flex;
     flex-flow: row;
-    flex: 0 0 auto;
     justify-content:space-between;
-    width: 100%;
-    height: calc(100% - 89px);
+    width: 100% ;
+    height: calc(100vh - 89px);
 }
 
 .sage-part-container {
     flex-grow: 0.5;
     max-width: 80%;
+    flex: 0 0 70%;
 }
 
 

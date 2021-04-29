@@ -19,11 +19,6 @@
     scrollbar-color: var(--dark-accent) var(--main);
 }
 
-html {
-    height: 100%
-}
-
 body {
-    height: 100%;
     background: var(--main);
 }

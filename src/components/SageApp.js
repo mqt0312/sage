@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Provider} from 'react'
+import React, {useState, useEffect} from 'react'
 import Part1 from './part-1/Part1'
 import Part2 from './Part2'
 import Button from './common/Button'
@@ -50,6 +50,9 @@ const SageApp = (props) => {
                 break;
             case 1:
                 part = <Part2/>
+                break;
+            default:
+                // TODO: See if we need a default case
                 break;
         }
     }

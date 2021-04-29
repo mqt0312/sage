@@ -1,4 +1,4 @@
-import React, {useState,useCallback} from 'react';
+import React, {useCallback} from 'react';
 import "./UserInput.css";
 
 function detectSubmit(e, callBack) {
@@ -7,7 +7,7 @@ function detectSubmit(e, callBack) {
     
     if (keycode === 13 && !e.shiftKey) {
         e.preventDefault();
-        let textbox = document.getElementById("p1-textarea");
+        let textbox = e.target; //document.getElementById("p1-textarea");
         textbox.value && callBack(textbox.value);
         textbox.value = '';
         textAreaAdjust(e.target);
@@ -17,11 +17,11 @@ function detectSubmit(e, callBack) {
 }
 
 const UserInput = (props) => {
-    const {force_render, forceRender} = useState(0);
     React.useEffect(() => {
+        console.log("adding resize listener...")
         window.addEventListener('resize', textAreaAdjust);
         return () => {
-            console.log("removing listener...")
+            console.log("removing resize listener...")
             window.removeEventListener('resize', textAreaAdjust);
         }
     }, [])
@@ -37,7 +37,7 @@ const UserInput = (props) => {
             let override = props.value;
             // setUserInputOverride(props.value);
             props.clearOverride(); // FIXME: Bad setState. Calling setState for a state in Part1. 
-            return override
+            return override;
             
         } else {
             // setUserInputOverride(undefined);
@@ -51,7 +51,7 @@ const UserInput = (props) => {
         <div className="sage-user-input-container">
             <textarea 
                 value={override_memo}
-                onChange={(e) => textAreaAdjust(e.target)}
+                onChange={textAreaAdjust}
                 rows={3} 
                 placeholder="Type here..." 
                 id="p1-textarea" 
