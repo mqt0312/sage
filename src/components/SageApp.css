@@ -1,5 +1,23 @@
 @import "../global.css";
 
-.sage-app > div {
-    padding: 0 10%;
+
+.sage-screen {
+    position:absolute;
+    left: 0;
 }
+
+.sage-btn-container {
+    display: flex;
+    flex-flow: row;
+    flex: 0 0 auto;
+    justify-content:space-between;
+    width: 100%;
+    height: calc(100% - 89px);
+}
+
+.sage-part-container {
+    flex-grow: 0.5;
+    max-width: 80%;
+}
+
+

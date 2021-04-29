@@ -62,7 +62,7 @@ const Part1 = (props) => {
     }
 
     return (
-        <div className="sage-part-1-container">
+        <div className="sage-part-container">
             <Prompt text="What is on your mind?"/>
             <UserInput submit={updateThoughts} value={user_input_override} clearOverride={clearOverride}/>
             <ThoughtDeck thoughts={thoughts} delete={deleteThoughts} staging={updateStage} edit={editThought}/>

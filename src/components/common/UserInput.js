@@ -18,6 +18,13 @@ function detectSubmit(e, callBack) {
 
 const UserInput = (props) => {
     const {force_render, forceRender} = useState(0);
+    React.useEffect(() => {
+        window.addEventListener('resize', textAreaAdjust);
+        return () => {
+            console.log("removing listener...")
+            window.removeEventListener('resize', textAreaAdjust);
+        }
+    }, [])
     const keydownCallBack = useCallback(
         (e) => {
             detectSubmit(e, props.submit);
@@ -48,14 +55,16 @@ const UserInput = (props) => {
                 rows={3} 
                 placeholder="Type here..." 
                 id="p1-textarea" 
-                onKeyDown={keydownCallBack} />
+                onKeyDown={keydownCallBack} 
+                spellCheck="false" />
         </div>
     )
 }
 
 UserInput.initial_height_recorded = 0;
 
-function textAreaAdjust(element) {
+function textAreaAdjust() {
+    const element = document.getElementById("p1-textarea");
     if (!UserInput.initial_height_recorded) {
         UserInput.initial_height = element.scrollHeight;
         UserInput.initial_height_recorded = true;

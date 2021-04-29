@@ -4,3 +4,10 @@
 .sage-prompt {
     font-size: 48px;
 }
+
+.prompt-divider {
+    background: var(--dark-accent);
+    width: 50%;
+    height: 2px;
+    margin: 5px;
+}

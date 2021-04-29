@@ -4,8 +4,10 @@ import './Prompt.css'
 const Prompt = (props) => {
     return (
         <div className="sage-prompt">
-            {props.text}
+            <div>{props.text}</div>
+            <div className="prompt-divider" />
         </div>
+
     )
 }
 

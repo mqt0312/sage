@@ -5,7 +5,7 @@ import WalkHeader from '../components/common/WalkHeader'
 
 const WalkRoute = () => {
     return (
-        <div class="sage-walk-route"> 
+        <div className="sage-walk-route"> 
             <WalkHeader/>
             <SageApp />
         </div>

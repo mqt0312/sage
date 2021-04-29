@@ -1,6 +1,7 @@
 import React, {useState, useEffect, Provider} from 'react'
 import Part1 from './part-1/Part1'
 import Part2 from './Part2'
+import Button from './common/Button'
 import SageAppContext from './SageAppContext'
 import './SageApp.css'
 
@@ -33,8 +34,14 @@ const SageApp = (props) => {
     const value = React.useMemo(() => ({
         appData,
         setAppData
-      }), [appData])
-
+      }), [appData]);
+    
+    const incrementStage = () => {
+        setAppData({...appData, stage:Math.min(4, appData.stage+1)})
+    };
+    const decrementStage = () => {
+        setAppData({...appData, stage:Math.max(0, appData.stage-1)})
+    };
     let part;
     if (appData) {
         switch(appData.stage) {
@@ -46,11 +53,18 @@ const SageApp = (props) => {
                 break;
         }
     }
-        
+    
     return (
         <SageAppContext.Provider value={value}>
             <div className="sage-app">
-                {part}
+                <div className="sage-screen sage-part">
+                    {/* {part} */}
+                </div>
+                <div className="sage-screen sage-btn-container" text=">">
+                    <Button className="sage-btn-left" onClick={decrementStage}/>
+                    {part}
+                    <Button className="sage-btn-right" onClick={incrementStage}/>
+                </div>
                 
             </div>
         </SageAppContext.Provider>
