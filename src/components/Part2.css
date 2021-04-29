@@ -1,0 +1,23 @@
+@import '../global.css';
+
+
+.sage-card-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    font-size: 20px;
+}
+.sage-card {
+    margin: 2%;
+    width: 95%;
+    height: calc(8em + 10px);
+    background-color: #8D9C81;
+}
+.sage-card > div {
+    padding: 10px;
+    user-select:none;
+    
+    height: 100%;
+    overflow: hidden;
+}
