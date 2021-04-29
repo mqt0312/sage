@@ -3,21 +3,32 @@
 
 .sage-screen {
     position:absolute;
-    left: 0;
+    display: flex;
+    flex-flow: row;
 }
 
 .sage-btn-container {
-    display: flex;
-    flex-flow: row;
+    position:fixed;
+    top:89;
     justify-content:space-between;
     width: 100% ;
-    height: calc(100vh - 89px);
+    height: calc(100vh - 188px);
+}
+
+.sage-part {
+    width: calc(100% - 40px);
+    left: 20px;
+    /* width: 100%; */
+    justify-items: center;
+    /* margin:auto; */
+    /* border: var(--light-accent) 1px  solid; */
+    padding: 0 10%;
 }
 
 .sage-part-container {
-    flex-grow: 0.5;
-    max-width: 80%;
-    flex: 0 0 70%;
+    flex-grow: 1;
+    /* max-width: 80%;
+    flex: 0 0 70%; */
 }
 
 

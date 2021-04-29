@@ -60,14 +60,15 @@ const SageApp = (props) => {
     return (
         <SageAppContext.Provider value={value}>
             <div className="sage-app">
-                <div className="sage-screen sage-part">
-                    {/* {part} */}
-                </div>
                 <div className="sage-screen sage-btn-container" text=">">
                     <Button className="sage-btn-left" onClick={decrementStage}/>
-                    {part}
+                    {/* {part} */}
                     <Button className="sage-btn-right" onClick={incrementStage}/>
                 </div>
+                <div className="sage-screen sage-part">
+                    {part}
+                </div>
+                
                 
             </div>
         </SageAppContext.Provider>
