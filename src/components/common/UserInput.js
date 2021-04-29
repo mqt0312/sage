@@ -29,7 +29,7 @@ const UserInput = (props) => {
         if (textbox && !textbox.value && props.value) {
             let override = props.value;
             // setUserInputOverride(props.value);
-            props.clearOverride(); // FIXME: Bad setState. Calling setState for a state in Part1.
+            props.clearOverride(); // FIXME: Bad setState. Calling setState for a state in Part1. 
             return override
             
         } else {
