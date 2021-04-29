@@ -12,6 +12,7 @@ const Part1 = (props) => {
     
     const {appData, setAppData} = useContext(SageAppContext);
     const [thoughts, setThoughts] = useState(appData ? appData.thoughts : []);
+    const [user_input_override, setUserInputOverride] = useState(undefined);
 
     const appDataMemo = React.useMemo(() => ({appData}), [appData]);
     useEffect(() => {
@@ -24,7 +25,6 @@ const Part1 = (props) => {
     
     useEffect(() => {
         setAppData({...appData, thoughts:thoughts});
-        console.log("Updated");
         // return () => {
         //     console.log("Done", thoughts);
         //     setAppData({
@@ -43,17 +43,29 @@ const Part1 = (props) => {
             id: uuid4(),
             text: t_text
         }]);
-        console.log(thoughts);
     };
     const deleteThoughts = (id) => {
         id && setThoughts(thoughts.filter(t => t.id !== id));
-        console.log(thoughts);
+        console.log("Deleting", id);
     };
+    const editThought = (id) => {
+        let thought = thoughts.find(t => t.id === id);
+        if (thought) {
+            let text = thought.text;
+            console.log("Editing", id);
+            setUserInputOverride(text);
+            deleteThoughts(id);
+        }    
+    }
+    const clearOverride = () => {
+        setUserInputOverride(undefined);
+    }
+
     return (
         <div className="sage-part-1-container">
             <Prompt text="What is on your mind?"/>
-            <UserInput submit={updateThoughts}/>
-            <ThoughtDeck thoughts={thoughts} delete={deleteThoughts} staging={updateStage}/>
+            <UserInput submit={updateThoughts} value={user_input_override} clearOverride={clearOverride}/>
+            <ThoughtDeck thoughts={thoughts} delete={deleteThoughts} staging={updateStage} edit={editThought}/>
         </div>
     )
 }

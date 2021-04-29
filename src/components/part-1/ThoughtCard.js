@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import {FaTimes} from 'react-icons/fa'
+import {FaTimes, FaEdit} from 'react-icons/fa'
 import './ThoughtCard.css'
 
 const ThoughtCard = (props) => {
@@ -9,15 +9,30 @@ const ThoughtCard = (props) => {
         },
         [props.delete],
     )
+    const checkBeforeEdit = () => {
+        let textbox = document.getElementById("p1-textarea");
+        if (textbox && !textbox.value) {
+            props.edit(props.t.id);
+        }
+    }
     return (
-        <div className="sage-thought-card" onClick={() => props.staging(1)}>
+        <div className="sage-thought-card">
             <p className="sage-thought-text">{props.t.text}</p>
-            <FaTimes style={{
-                color: '#7f9172ff', 
-                cursor: 'pointer', 
-                fontSize: '1em', 
+            <div>
+                <FaEdit style={{
+                    color: '#7f9172ff', 
+                    cursor: 'pointer', 
+                    fontSize: '1em', 
+                }} onClick={checkBeforeEdit} />
+                <FaTimes style={{
+                    color: '#7f9172ff', 
+                    cursor: 'pointer', 
+                    fontSize: '1em', 
+                    
+                }} onClick={deleteCallBack} />
                 
-            }} onClick={deleteCallBack} />
+            </div>
+            
         </div>
     )
 }

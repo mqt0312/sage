@@ -5,7 +5,7 @@ const ThoughtDeck = (props) => {
     return (
         <div className="sage-thought-deck">
             {props.thoughts.map(t => 
-                <ThoughtCard key={t.id} t={t} delete={props.delete} staging={props.staging}/>
+                <ThoughtCard key={t.id} t={t} delete={props.delete} staging={props.staging} edit={props.edit}/>
             )}
         </div>
         

@@ -13,7 +13,6 @@ const SageApp = (props) => {
         
         const json = localStorage.getItem('appData');
         const savedAppData = JSON.parse(json);
-        console.log("mounting sageapp", savedAppData);
         if (savedAppData) {
             setAppData(savedAppData);
         } else {
